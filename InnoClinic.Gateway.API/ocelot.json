@@ -4,198 +4,260 @@
   },
   "Routes": [
     {
-      //InnoClinic.Services.API/MedicalService
-      "UpstreamPathTemplate": "/gateway/MedicalService",
+      //InnoClinic.Appointments.API/Appointment
+      "UpstreamPathTemplate": "/gateway/Appointment",
       "UpstreamHttpMethod": [ "POST" ],
-      "DownstreamPathTemplate": "/api/MedicalService",
+      "DownstreamPathTemplate": "/api/Appointment",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/MedicalService",
+      "UpstreamPathTemplate": "/gateway/Appointment/create",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Appointment/create",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.appointments.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Appointment",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/MedicalService",
+      "DownstreamPathTemplate": "/api/Appointment",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/MedicalService/services-by-specialization-id/{id}",
+      "UpstreamPathTemplate": "/gateway/Appointment/appointments-by-doctor",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/MedicalService/services-by-specialization-id/{id}",
+      "DownstreamPathTemplate": "/api/Appointment/appointments-by-doctor",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/MedicalService/all-services-by-category",
+      "UpstreamPathTemplate": "/gateway/Appointment/appointments-by-date",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/MedicalService/all-services-by-category",
+      "DownstreamPathTemplate": "/api/Appointment/appointments-by-date",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/MedicalService/all-active-medical-services",
+      "UpstreamPathTemplate": "/gateway/Appointment/appointments-by-doctor-and-date",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/MedicalService/all-active-medical-services",
+      "DownstreamPathTemplate": "/api/Appointment/appointments-by-doctor-and-date",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/MedicalService/{id}",
+      "UpstreamPathTemplate": "/gateway/Appointment/all-available-time-slots",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Appointment/all-available-time-slots",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.appointments.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Appointment/by-patient-id/{patientId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Appointment/by-patient-id/{patientId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.appointments.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Appointment/is-appointment-results-existence/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Appointment/is-appointment-results-existence/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.appointments.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Appointment/{id}",
       "UpstreamHttpMethod": [ "PUT" ],
-      "DownstreamPathTemplate": "/api/MedicalService/{id}",
+      "DownstreamPathTemplate": "/api/Appointment/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/MedicalService/{id}",
+      "UpstreamPathTemplate": "/gateway/Appointment/{id}",
       "UpstreamHttpMethod": [ "DELETE" ],
-      "DownstreamPathTemplate": "/api/MedicalService/{id}",
+      "DownstreamPathTemplate": "/api/Appointment/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
 
     {
-      //InnoClinic.Services.API/ServiceCategory
-      "UpstreamPathTemplate": "/gateway/ServiceCategory",
+      //InnoClinic.Appointments.API/AppointmentResult
+      "UpstreamPathTemplate": "/gateway/AppointmentResult",
       "UpstreamHttpMethod": [ "POST" ],
-      "DownstreamPathTemplate": "/api/ServiceCategory",
+      "DownstreamPathTemplate": "/api/AppointmentResult",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/ServiceCategory",
+      "UpstreamPathTemplate": "/gateway/AppointmentResult",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/ServiceCategory",
+      "DownstreamPathTemplate": "/api/AppointmentResult",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/ServiceCategory/{id}",
+      "UpstreamPathTemplate": "/gateway/AppointmentResult/by-appointment-id/{appointmentId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/AppointmentResult/by-appointment-id/{appointmentId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.appointments.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/AppointmentResult/{id}",
       "UpstreamHttpMethod": [ "PUT" ],
-      "DownstreamPathTemplate": "/api/ServiceCategory/{id}",
+      "DownstreamPathTemplate": "/api/AppointmentResult/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/ServiceCategory/{id}",
+      "UpstreamPathTemplate": "/gateway/AppointmentResult/{id}",
       "UpstreamHttpMethod": [ "DELETE" ],
-      "DownstreamPathTemplate": "/api/ServiceCategory/{id}",
+      "DownstreamPathTemplate": "/api/AppointmentResult/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.appointments.api",
           "Port": 8080
         }
       ]
     },
 
     {
-      //InnoClinic.Services.API/Specialization
-      "UpstreamPathTemplate": "/gateway/Specialization",
+      //Innoclinic.Documents.API/Document
+      "UpstreamPathTemplate": "/gateway/Document",
       "UpstreamHttpMethod": [ "POST" ],
-      "DownstreamPathTemplate": "/api/Specialization",
+      "DownstreamPathTemplate": "/api/Document",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.documents.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/Specialization",
+      "UpstreamPathTemplate": "/gateway/Document/create-and-send-appointment-result-document-to-email",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Document/create-and-send-appointment-result-document-to-email",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.documents.api",
+          "Port": 8080
+        }
+      ]
+    },
+
+    {
+      //Innoclinic.Documents.API/Photo
+      "UpstreamPathTemplate": "/gateway/Photo",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Photo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.documents.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Photo/{id}",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/Specialization",
+      "DownstreamPathTemplate": "/api/Photo/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.documents.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/Specialization/all-active-specializations",
-      "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/Specialization/all-active-specializations",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "innoclinic.services.api",
-          "Port": 8080
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/Specialization/{id}",
+      "UpstreamPathTemplate": "/gateway/Photo/{id}",
       "UpstreamHttpMethod": [ "PUT" ],
-      "DownstreamPathTemplate": "/api/Specialization/{id}",
+      "DownstreamPathTemplate": "/api/Photo/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.services.api",
-          "Port": 8080
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/Specialization/{id}",
-      "UpstreamHttpMethod": [ "DELETE" ],
-      "DownstreamPathTemplate": "/api/Specialization/{id}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "innoclinic.services.api",
+          "Host": "innoclinic.documents.api",
           "Port": 8080
         }
       ]
@@ -337,6 +399,18 @@
       ]
     },
     {
+      "UpstreamPathTemplate": "/gateway/Doctor/status-by-account-id/{accountId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Doctor/status-by-account-id/{accountId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.profiles.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/gateway/Doctor/{id}",
       "UpstreamHttpMethod": [ "PUT" ],
       "DownstreamPathTemplate": "/api/Doctor/{id}",
@@ -363,6 +437,18 @@
 
     {
       //InnoClinic.Profiles.API/Patient
+      "UpstreamPathTemplate": "/gateway/Patient/create",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Patient/create",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.profiles.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/gateway/Patient",
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamPathTemplate": "/api/Patient",
@@ -509,6 +595,18 @@
       ]
     },
     {
+      "UpstreamPathTemplate": "/gateway/Receptionist/status-by-account-id/{accountId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Receptionist/status-by-account-id/{accountId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.profiles.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
       "UpstreamPathTemplate": "/gateway/Receptionist/{id}",
       "UpstreamHttpMethod": [ "PUT" ],
       "DownstreamPathTemplate": "/api/Receptionist/{id}",
@@ -534,98 +632,222 @@
     },
 
     {
-      //InnoClinic.Appointments.API/Appointment
-      "UpstreamPathTemplate": "/gateway/Appointment",
+      //InnoClinic.Services.API/MedicalService
+      "UpstreamPathTemplate": "/gateway/MedicalService",
       "UpstreamHttpMethod": [ "POST" ],
-      "DownstreamPathTemplate": "/api/Appointment",
+      "DownstreamPathTemplate": "/api/MedicalService",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.appointments.api",
+          "Host": "innoclinic.services.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/Appointment",
+      "UpstreamPathTemplate": "/gateway/MedicalService",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/Appointment",
+      "DownstreamPathTemplate": "/api/MedicalService",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.appointments.api",
+          "Host": "innoclinic.services.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/Appointment/appointments-by-doctor",
+      "UpstreamPathTemplate": "/gateway/MedicalService/{id}",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/Appointment/appointments-by-doctor",
+      "DownstreamPathTemplate": "/api/MedicalService/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.appointments.api",
+          "Host": "innoclinic.services.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/Appointment/appointments-by-date/{date}",
+      "UpstreamPathTemplate": "/gateway/MedicalService/services-by-specialization-id/{specializationId}",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/Appointment/appointments-by-date/{date}",
+      "DownstreamPathTemplate": "/api/MedicalService/services-by-specialization-id/{specializationId}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.appointments.api",
+          "Host": "innoclinic.services.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/Appointment/appointments-by-doctor-and-date/{date}",
+      "UpstreamPathTemplate": "/gateway/MedicalService/all-services-by-category",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/Appointment/appointments-by-doctor-and-date/{date}",
+      "DownstreamPathTemplate": "/api/MedicalService/all-services-by-category",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.appointments.api",
+          "Host": "innoclinic.services.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/Appointment/all-available-time-slots",
+      "UpstreamPathTemplate": "/gateway/MedicalService/all-active-medical-services",
       "UpstreamHttpMethod": [ "GET" ],
-      "DownstreamPathTemplate": "/api/Appointment/all-available-time-slots",
+      "DownstreamPathTemplate": "/api/MedicalService/all-active-medical-services",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.appointments.api",
+          "Host": "innoclinic.services.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/Appointment/{id}",
+      "UpstreamPathTemplate": "/gateway/MedicalService/{id}",
       "UpstreamHttpMethod": [ "PUT" ],
-      "DownstreamPathTemplate": "/api/Appointment/{id}",
+      "DownstreamPathTemplate": "/api/MedicalService/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.appointments.api",
+          "Host": "innoclinic.services.api",
           "Port": 8080
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/Appointment/{id}",
+      "UpstreamPathTemplate": "/gateway/MedicalService/{id}",
       "UpstreamHttpMethod": [ "DELETE" ],
-      "DownstreamPathTemplate": "/api/Appointment/{id}",
+      "DownstreamPathTemplate": "/api/MedicalService/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "innoclinic.appointments.api",
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+
+    {
+      //InnoClinic.Services.API/ServiceCategory
+      "UpstreamPathTemplate": "/gateway/ServiceCategory",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/ServiceCategory",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/ServiceCategory",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/ServiceCategory",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/ServiceCategory/{id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/ServiceCategory/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/ServiceCategory/{id}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamPathTemplate": "/api/ServiceCategory/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+
+    {
+      //InnoClinic.Services.API/Specialization
+      "UpstreamPathTemplate": "/gateway/Specialization",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/Specialization",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Specialization",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Specialization",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Specialization/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Specialization/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Specialization/all-active-specializations",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/Specialization/all-active-specializations",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Specialization/{id}",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamPathTemplate": "/api/Specialization/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
+          "Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Specialization/{id}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamPathTemplate": "/api/Specialization/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "innoclinic.services.api",
           "Port": 8080
         }
       ]
